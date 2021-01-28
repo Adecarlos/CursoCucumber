@@ -1,610 +1,933 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/Features/cadastro_de_contas.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/Features/alugar_filme.feature");
 formatter.feature({
-  "comments": [
+  "name": "Alugar filme",
+  "description": "\tComo um usuário\n\tEu quero cadastrar aluguéis de filmes\n\tPara controlar preços e datas de entregas",
+  "keyword": "Funcionalidade",
+  "tags": [
     {
-      "line": 1,
-      "value": "#language: pt"
+      "name": "@unitários"
     }
-  ],
-  "line": 2,
-  "name": "Cadastro de contas",
-  "description": "\nComo um usuário \nGostaria de cadastrar contas\nPara que eu possa distribuir meu dinheiro de uma forma mais organizada",
-  "id": "cadastro-de-contas",
-  "keyword": "Funcionalidade"
+  ]
 });
-formatter.scenarioOutline({
-  "line": 17,
-  "name": "Deve validar regras cadastro contas",
+formatter.scenario({
+  "name": "Deve alugar um filme com sucesso",
   "description": "",
-  "id": "cadastro-de-contas;deve-validar-regras-cadastro-contas",
-  "type": "scenario_outline",
-  "keyword": "Esquema do Cenário"
+  "keyword": "Cenário",
+  "tags": [
+    {
+      "name": "@unitários"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
 });
 formatter.step({
-  "line": 18,
-  "name": "informo a conta \"\u003cconta\u003e\"",
+  "name": "um filme com estoque de 2 unidades",
+  "keyword": "Dado "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.umFilmeComEstoqueDeUnidades(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "que o preço do aluguel seja 3 reais",
   "keyword": "E "
 });
-formatter.step({
-  "line": 19,
-  "name": "seleciono Salvar",
-  "keyword": "E "
+formatter.match({
+  "location": "AlugarFilmesSteps.queOPreçoDoAluguelSejaReais(int)"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.step({
-  "line": 20,
-  "name": "recebo a mensagem \"\u003cmensagem\u003e\"",
+  "name": "alugar",
+  "keyword": "Quando "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.alugar()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "o preço do aluguel será 3 reais",
   "keyword": "Então "
 });
-formatter.examples({
-  "line": 22,
-  "name": "",
+formatter.match({
+  "location": "AlugarFilmesSteps.oPreçoDoAluguelSeráReais(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "a data de entrega será em 1 dia",
+  "keyword": "E "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.aDataDeEntregaSeráEmDias(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "o estoque do filme será 1 unidade",
+  "keyword": "E "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.oEstoqueDoFilmeSeráUnidade(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Deve alugar um filme com sucesso",
   "description": "",
-  "id": "cadastro-de-contas;deve-validar-regras-cadastro-contas;",
+  "keyword": "Cenário",
+  "tags": [
+    {
+      "name": "@unitários"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "um filme",
   "rows": [
     {
       "cells": [
-        "conta",
-        "mensagem"
-      ],
-      "line": 23,
-      "id": "cadastro-de-contas;deve-validar-regras-cadastro-contas;;1"
+        "estoque",
+        "2"
+      ]
     },
     {
       "cells": [
-        "Conta de Teste",
-        "Conta adicionada com sucesso!"
-      ],
-      "line": 24,
-      "id": "cadastro-de-contas;deve-validar-regras-cadastro-contas;;2"
+        "preco",
+        "3"
+      ]
     },
     {
       "cells": [
-        "",
-        "Informe o nome da conta"
-      ],
-      "line": 25,
-      "id": "cadastro-de-contas;deve-validar-regras-cadastro-contas;;3"
+        "tipo",
+        "semanal"
+      ]
+    }
+  ],
+  "keyword": "Dado "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.umFilme(DataTable)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "alugar",
+  "keyword": "Quando "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.alugar()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "o preço do aluguel será 9 reais",
+  "keyword": "Então "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.oPreçoDoAluguelSeráReais(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "a data de entrega será em 7 dia",
+  "keyword": "E "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.aDataDeEntregaSeráEmDias(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "o estoque do filme será 1 unidade",
+  "keyword": "E "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.oEstoqueDoFilmeSeráUnidade(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Não deve alugar filmes sem estoque",
+  "description": "",
+  "keyword": "Cenário",
+  "tags": [
+    {
+      "name": "@unitários"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "um filme com estoque de 0 unidades",
+  "keyword": "Dado "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.umFilmeComEstoqueDeUnidades(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "alugar",
+  "keyword": "Quando "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.alugar()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "não será possível por falta de estoque",
+  "keyword": "Então "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.não_será_possível_por_falta_de_estoque()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "o estoque do filme será 0 unidade",
+  "keyword": "E "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.oEstoqueDoFilmeSeráUnidade(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenarioOutline({
+  "name": "Deve dar condições conforme tipo de aluguel",
+  "description": "",
+  "keyword": "Esquema do Cenário"
+});
+formatter.step({
+  "name": "um filme com estoque de 2 unidades",
+  "keyword": "Dado "
+});
+formatter.step({
+  "name": "que o preço do aluguel seja \u003cpreco\u003e reais",
+  "keyword": "E "
+});
+formatter.step({
+  "name": "que o tipo do aluguel seja \u003ctipo\u003e",
+  "keyword": "E "
+});
+formatter.step({
+  "name": "alugar",
+  "keyword": "Quando "
+});
+formatter.step({
+  "name": "o preço do aluguel será \u003cvalor\u003e reais",
+  "keyword": "Então "
+});
+formatter.step({
+  "name": "a data de entrega será em \u003cqtdDias\u003e dias",
+  "keyword": "E "
+});
+formatter.step({
+  "name": "a pontuação será de \u003cpontuacao\u003e pontos",
+  "keyword": "E "
+});
+formatter.examples({
+  "name": "",
+  "description": "",
+  "keyword": "Exemplos",
+  "rows": [
+    {
+      "cells": [
+        "preco",
+        "tipo",
+        "valor",
+        "qtdDias",
+        "pontuacao"
+      ]
     },
     {
       "cells": [
-        "Conta mesmo nome",
-        "Já existe uma conta com esse nome!"
-      ],
-      "line": 26,
-      "id": "cadastro-de-contas;deve-validar-regras-cadastro-contas;;4"
+        "4",
+        "extendido",
+        "8",
+        "3",
+        "2"
+      ]
+    },
+    {
+      "cells": [
+        "4",
+        "comum",
+        "4",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "cells": [
+        "5",
+        "semanal",
+        "15",
+        "7",
+        "3"
+      ]
     }
-  ],
-  "keyword": "Exemplos"
+  ]
+});
+formatter.scenario({
+  "name": "Deve dar condições conforme tipo de aluguel",
+  "description": "",
+  "keyword": "Esquema do Cenário",
+  "tags": [
+    {
+      "name": "@unitários"
+    }
+  ]
 });
 formatter.before({
-  "duration": 133162,
   "status": "passed"
 });
-formatter.background({
-  "line": 8,
-  "name": "",
-  "description": "",
-  "type": "background",
-  "keyword": "Contexto"
-});
 formatter.step({
-  "line": 9,
-  "name": "que estou acessando a aplicação",
+  "name": "um filme com estoque de 2 unidades",
   "keyword": "Dado "
 });
+formatter.match({
+  "location": "AlugarFilmesSteps.umFilmeComEstoqueDeUnidades(int)"
+});
+formatter.result({
+  "status": "passed"
+});
 formatter.step({
-  "line": 10,
-  "name": "informo o usuário \"abc@abc\"",
+  "name": "que o preço do aluguel seja 4 reais",
+  "keyword": "E "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.queOPreçoDoAluguelSejaReais(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "que o tipo do aluguel seja extendido",
+  "keyword": "E "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.queOTipoDoAluguelSejaExtendido(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "alugar",
   "keyword": "Quando "
 });
-formatter.step({
-  "line": 11,
-  "name": "a senha \"abc\"",
-  "keyword": "E "
+formatter.match({
+  "location": "AlugarFilmesSteps.alugar()"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.step({
-  "line": 12,
-  "name": "seleciono entrar",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 13,
-  "name": "visualizo a página inicial",
+  "name": "o preço do aluguel será 8 reais",
   "keyword": "Então "
 });
-formatter.step({
-  "line": 14,
-  "name": "seleciono Contas",
-  "keyword": "Quando "
+formatter.match({
+  "location": "AlugarFilmesSteps.oPreçoDoAluguelSeráReais(int)"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.step({
-  "line": 15,
-  "name": "seleciono Adicionar",
+  "name": "a data de entrega será em 3 dias",
   "keyword": "E "
 });
 formatter.match({
-  "location": "CadastroDeContasSteps.queEstouAcessandoAAplicação()"
+  "location": "AlugarFilmesSteps.aDataDeEntregaSeráEmDias(int)"
 });
 formatter.result({
-  "duration": 2300626554,
   "status": "passed"
 });
-formatter.match({
-  "arguments": [
-    {
-      "val": "abc@abc",
-      "offset": 19
-    }
-  ],
-  "location": "CadastroDeContasSteps.informoOUsuário(String)"
-});
-formatter.result({
-  "duration": 83254602,
-  "status": "passed"
+formatter.step({
+  "name": "a pontuação será de 2 pontos",
+  "keyword": "E "
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "abc",
-      "offset": 9
-    }
-  ],
-  "location": "CadastroDeContasSteps.aSenha(String)"
+  "location": "AlugarFilmesSteps.aPontuaçãoSeráDePontos(int)"
 });
 formatter.result({
-  "duration": 49144584,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CadastroDeContasSteps.selecionoEntrar()"
-});
-formatter.result({
-  "duration": 599264556,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CadastroDeContasSteps.visualizoAPáginaInicial()"
-});
-formatter.result({
-  "duration": 23853676,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CadastroDeContasSteps.selecionoContas()"
-});
-formatter.result({
-  "duration": 38385087,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CadastroDeContasSteps.selecionoAdicionar()"
-});
-formatter.result({
-  "duration": 358246191,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 24,
-  "name": "Deve validar regras cadastro contas",
+  "name": "Deve dar condições conforme tipo de aluguel",
   "description": "",
-  "id": "cadastro-de-contas;deve-validar-regras-cadastro-contas;;2",
-  "type": "scenario",
-  "keyword": "Esquema do Cenário"
-});
-formatter.step({
-  "line": 18,
-  "name": "informo a conta \"Conta de Teste\"",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "E "
-});
-formatter.step({
-  "line": 19,
-  "name": "seleciono Salvar",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 20,
-  "name": "recebo a mensagem \"Conta adicionada com sucesso!\"",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "Então "
-});
-formatter.match({
-  "arguments": [
+  "keyword": "Esquema do Cenário",
+  "tags": [
     {
-      "val": "Conta de Teste",
-      "offset": 17
+      "name": "@unitários"
     }
-  ],
-  "location": "CadastroDeContasSteps.informoAConta(String)"
-});
-formatter.result({
-  "duration": 75657725,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CadastroDeContasSteps.selecionoSalvar()"
-});
-formatter.result({
-  "duration": 412971879,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Conta adicionada com sucesso!",
-      "offset": 19
-    }
-  ],
-  "location": "CadastroDeContasSteps.receboAMensagem(String)"
-});
-formatter.result({
-  "duration": 20372419,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 490878918,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 79767570,
-  "status": "passed"
+  ]
 });
 formatter.before({
-  "duration": 86218,
   "status": "passed"
 });
-formatter.background({
-  "line": 8,
-  "name": "",
-  "description": "",
-  "type": "background",
-  "keyword": "Contexto"
-});
 formatter.step({
-  "line": 9,
-  "name": "que estou acessando a aplicação",
+  "name": "um filme com estoque de 2 unidades",
   "keyword": "Dado "
 });
+formatter.match({
+  "location": "AlugarFilmesSteps.umFilmeComEstoqueDeUnidades(int)"
+});
+formatter.result({
+  "status": "passed"
+});
 formatter.step({
-  "line": 10,
-  "name": "informo o usuário \"abc@abc\"",
+  "name": "que o preço do aluguel seja 4 reais",
+  "keyword": "E "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.queOPreçoDoAluguelSejaReais(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "que o tipo do aluguel seja comum",
+  "keyword": "E "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.queOTipoDoAluguelSejaExtendido(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "alugar",
   "keyword": "Quando "
 });
-formatter.step({
-  "line": 11,
-  "name": "a senha \"abc\"",
-  "keyword": "E "
+formatter.match({
+  "location": "AlugarFilmesSteps.alugar()"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.step({
-  "line": 12,
-  "name": "seleciono entrar",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 13,
-  "name": "visualizo a página inicial",
+  "name": "o preço do aluguel será 4 reais",
   "keyword": "Então "
 });
-formatter.step({
-  "line": 14,
-  "name": "seleciono Contas",
-  "keyword": "Quando "
+formatter.match({
+  "location": "AlugarFilmesSteps.oPreçoDoAluguelSeráReais(int)"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.step({
-  "line": 15,
-  "name": "seleciono Adicionar",
+  "name": "a data de entrega será em 1 dias",
   "keyword": "E "
 });
 formatter.match({
-  "location": "CadastroDeContasSteps.queEstouAcessandoAAplicação()"
+  "location": "AlugarFilmesSteps.aDataDeEntregaSeráEmDias(int)"
 });
 formatter.result({
-  "duration": 2356809479,
   "status": "passed"
 });
-formatter.match({
-  "arguments": [
-    {
-      "val": "abc@abc",
-      "offset": 19
-    }
-  ],
-  "location": "CadastroDeContasSteps.informoOUsuário(String)"
-});
-formatter.result({
-  "duration": 84589992,
-  "status": "passed"
+formatter.step({
+  "name": "a pontuação será de 1 pontos",
+  "keyword": "E "
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "abc",
-      "offset": 9
-    }
-  ],
-  "location": "CadastroDeContasSteps.aSenha(String)"
+  "location": "AlugarFilmesSteps.aPontuaçãoSeráDePontos(int)"
 });
 formatter.result({
-  "duration": 47856234,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CadastroDeContasSteps.selecionoEntrar()"
-});
-formatter.result({
-  "duration": 579451297,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CadastroDeContasSteps.visualizoAPáginaInicial()"
-});
-formatter.result({
-  "duration": 21184825,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CadastroDeContasSteps.selecionoContas()"
-});
-formatter.result({
-  "duration": 40037628,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CadastroDeContasSteps.selecionoAdicionar()"
-});
-formatter.result({
-  "duration": 276548850,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 25,
-  "name": "Deve validar regras cadastro contas",
+  "name": "Deve dar condições conforme tipo de aluguel",
   "description": "",
-  "id": "cadastro-de-contas;deve-validar-regras-cadastro-contas;;3",
-  "type": "scenario",
-  "keyword": "Esquema do Cenário"
-});
-formatter.step({
-  "line": 18,
-  "name": "informo a conta \"\"",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "E "
-});
-formatter.step({
-  "line": 19,
-  "name": "seleciono Salvar",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 20,
-  "name": "recebo a mensagem \"Informe o nome da conta\"",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "Então "
-});
-formatter.match({
-  "arguments": [
+  "keyword": "Esquema do Cenário",
+  "tags": [
     {
-      "val": "",
-      "offset": 17
+      "name": "@unitários"
     }
-  ],
-  "location": "CadastroDeContasSteps.informoAConta(String)"
-});
-formatter.result({
-  "duration": 63498890,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CadastroDeContasSteps.selecionoSalvar()"
-});
-formatter.result({
-  "duration": 240974840,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Informe o nome da conta",
-      "offset": 19
-    }
-  ],
-  "location": "CadastroDeContasSteps.receboAMensagem(String)"
-});
-formatter.result({
-  "duration": 21541996,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 463730995,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 79389924,
-  "status": "passed"
+  ]
 });
 formatter.before({
-  "duration": 37072,
   "status": "passed"
 });
-formatter.background({
-  "line": 8,
-  "name": "",
-  "description": "",
-  "type": "background",
-  "keyword": "Contexto"
-});
 formatter.step({
-  "line": 9,
-  "name": "que estou acessando a aplicação",
+  "name": "um filme com estoque de 2 unidades",
   "keyword": "Dado "
 });
+formatter.match({
+  "location": "AlugarFilmesSteps.umFilmeComEstoqueDeUnidades(int)"
+});
+formatter.result({
+  "status": "passed"
+});
 formatter.step({
-  "line": 10,
-  "name": "informo o usuário \"abc@abc\"",
+  "name": "que o preço do aluguel seja 5 reais",
+  "keyword": "E "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.queOPreçoDoAluguelSejaReais(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "que o tipo do aluguel seja semanal",
+  "keyword": "E "
+});
+formatter.match({
+  "location": "AlugarFilmesSteps.queOTipoDoAluguelSejaExtendido(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "alugar",
   "keyword": "Quando "
 });
-formatter.step({
-  "line": 11,
-  "name": "a senha \"abc\"",
-  "keyword": "E "
+formatter.match({
+  "location": "AlugarFilmesSteps.alugar()"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.step({
-  "line": 12,
-  "name": "seleciono entrar",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 13,
-  "name": "visualizo a página inicial",
+  "name": "o preço do aluguel será 15 reais",
   "keyword": "Então "
 });
-formatter.step({
-  "line": 14,
-  "name": "seleciono Contas",
-  "keyword": "Quando "
+formatter.match({
+  "location": "AlugarFilmesSteps.oPreçoDoAluguelSeráReais(int)"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.step({
-  "line": 15,
-  "name": "seleciono Adicionar",
+  "name": "a data de entrega será em 7 dias",
   "keyword": "E "
 });
 formatter.match({
-  "location": "CadastroDeContasSteps.queEstouAcessandoAAplicação()"
+  "location": "AlugarFilmesSteps.aDataDeEntregaSeráEmDias(int)"
 });
 formatter.result({
-  "duration": 2194264580,
   "status": "passed"
 });
+formatter.step({
+  "name": "a pontuação será de 3 pontos",
+  "keyword": "E "
+});
 formatter.match({
-  "arguments": [
+  "location": "AlugarFilmesSteps.aPontuaçãoSeráDePontos(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.uri("file:src/test/resources/Features/aprender_cucumber.feature");
+formatter.feature({
+  "name": "Aprender Cucumber",
+  "description": "\tComo um aluno\n\tEu quero aprender a utilizar Cucumber\n\tPara que eu possa automatizar critérios de aceitação",
+  "keyword": "Funcionalidade",
+  "tags": [
     {
-      "val": "abc@abc",
-      "offset": 19
+      "name": "@unitários"
     }
-  ],
-  "location": "CadastroDeContasSteps.informoOUsuário(String)"
+  ]
 });
-formatter.result({
-  "duration": 86056724,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
+formatter.scenario({
+  "name": "Deve executar especificação",
+  "description": "",
+  "keyword": "Cenário",
+  "tags": [
     {
-      "val": "abc",
-      "offset": 9
+      "name": "@unitários"
     }
-  ],
-  "location": "CadastroDeContasSteps.aSenha(String)"
+  ]
 });
-formatter.result({
-  "duration": 54967575,
+formatter.before({
   "status": "passed"
 });
+formatter.step({
+  "name": "que criei o arquivo corretamente",
+  "keyword": "Dado "
+});
 formatter.match({
-  "location": "CadastroDeContasSteps.selecionoEntrar()"
+  "location": "AprenderCucumberSteps.queCrieiOArquivoCorretamente()"
 });
 formatter.result({
-  "duration": 605698833,
   "status": "passed"
 });
+formatter.step({
+  "name": "executá-lo",
+  "keyword": "Quando "
+});
 formatter.match({
-  "location": "CadastroDeContasSteps.visualizoAPáginaInicial()"
+  "location": "AprenderCucumberSteps.executáLo()"
 });
 formatter.result({
-  "duration": 21779028,
   "status": "passed"
 });
-formatter.match({
-  "location": "CadastroDeContasSteps.selecionoContas()"
-});
-formatter.result({
-  "duration": 41953500,
-  "status": "passed"
+formatter.step({
+  "name": "a especificação deve finalizar com sucesso",
+  "keyword": "Então "
 });
 formatter.match({
-  "location": "CadastroDeContasSteps.selecionoAdicionar()"
+  "location": "AprenderCucumberSteps.aEspecificaçãoDeveFinalizarComSucesso()"
 });
 formatter.result({
-  "duration": 230514416,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 26,
-  "name": "Deve validar regras cadastro contas",
+  "name": "Deve incrementar contador",
   "description": "",
-  "id": "cadastro-de-contas;deve-validar-regras-cadastro-contas;;4",
-  "type": "scenario",
-  "keyword": "Esquema do Cenário"
+  "keyword": "Cenário",
+  "tags": [
+    {
+      "name": "@unitários"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
 });
 formatter.step({
-  "line": 18,
-  "name": "informo a conta \"Conta mesmo nome\"",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "E "
+  "name": "que o valor do contador é 15",
+  "keyword": "Dado "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.queOValorDoContadorÉ(int)"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.step({
-  "line": 19,
-  "name": "seleciono Salvar",
-  "keyword": "E "
+  "name": "eu incrementar em 3",
+  "keyword": "Quando "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.euIncrementarEm(int)"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.step({
-  "line": 20,
-  "name": "recebo a mensagem \"Já existe uma conta com esse nome!\"",
-  "matchedColumns": [
-    1
-  ],
+  "name": "o valor do contador será 18",
   "keyword": "Então "
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "Conta mesmo nome",
-      "offset": 17
-    }
-  ],
-  "location": "CadastroDeContasSteps.informoAConta(String)"
+  "location": "AprenderCucumberSteps.oValorDoContadorSerá(int)"
 });
 formatter.result({
-  "duration": 78734050,
   "status": "passed"
+});
+formatter.scenario({
+  "name": "Deve incrementar contador",
+  "description": "",
+  "keyword": "Cenário",
+  "tags": [
+    {
+      "name": "@unitários"
+    },
+    {
+      "name": "@tipo1"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "que o valor do contador é 123",
+  "keyword": "Dado "
 });
 formatter.match({
-  "location": "CadastroDeContasSteps.selecionoSalvar()"
+  "location": "AprenderCucumberSteps.queOValorDoContadorÉ(int)"
 });
 formatter.result({
-  "duration": 255120834,
   "status": "passed"
+});
+formatter.step({
+  "name": "eu incrementar em 35",
+  "keyword": "Quando "
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "Já existe uma conta com esse nome!",
-      "offset": 19
-    }
-  ],
-  "location": "CadastroDeContasSteps.receboAMensagem(String)"
+  "location": "AprenderCucumberSteps.euIncrementarEm(int)"
 });
 formatter.result({
-  "duration": 25536588,
   "status": "passed"
 });
-formatter.after({
-  "duration": 462121896,
+formatter.step({
+  "name": "o valor do contador será 158",
+  "keyword": "Então "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.oValorDoContadorSerá(int)"
+});
+formatter.result({
   "status": "passed"
 });
-formatter.after({
-  "duration": 85437949,
+formatter.scenario({
+  "name": "Deve calcular atraso na entrega",
+  "description": "",
+  "keyword": "Cenário",
+  "tags": [
+    {
+      "name": "@unitários"
+    },
+    {
+      "name": "@tipo2"
+    }
+  ]
+});
+formatter.before({
   "status": "passed"
+});
+formatter.step({
+  "name": "que a entrega é dia 05/04/2018",
+  "keyword": "Dado "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.queAEntregaÉDia(Date)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "a entrega atrasar em 2 dias",
+  "keyword": "Quando "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.aEntregaAtrasarEmDias(int,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "a entrega será efetuada em 07/04/2018",
+  "keyword": "Então "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.aEntregaSeráEfetuadaEm(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Deve calcular atraso na entrega da China",
+  "description": "",
+  "keyword": "Cenário",
+  "tags": [
+    {
+      "name": "@unitários"
+    },
+    {
+      "name": "@tipo1"
+    },
+    {
+      "name": "@tipo2"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "que a entrega é dia 05/04/2018",
+  "keyword": "Dado "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.queAEntregaÉDia(Date)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "a entrega atrasar em 2 meses",
+  "keyword": "Quando "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.aEntregaAtrasarEmDias(int,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "a entrega será efetuada em 05/06/2018",
+  "keyword": "Então "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.aEntregaSeráEfetuadaEm(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Deve criar steps genéricos para estes passos",
+  "description": "",
+  "keyword": "Cenário",
+  "tags": [
+    {
+      "name": "@unitários"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "que o ticket é AF345",
+  "keyword": "Dado "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.queOTicketÉAF(String,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "que o valor da passagem é R$ 230,45",
+  "keyword": "Dado "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.queOValorDaPassagemÉR$(Double)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "que o nome do passageiro é \"Fulano da Silva\"",
+  "keyword": "Dado "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.queONomeDoPassageiroÉ(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "que o telefone do passageiro é 9999-9999",
+  "keyword": "Dado "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.queOTelefoneDoPassageiroÉ(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "criar os steps",
+  "keyword": "Quando "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.criarOsSteps()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "o teste vai funcionar",
+  "keyword": "Então "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.oTesteVaiFuncionar()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Deve reaproveitar os steps \"Dado\" do cenário anterior",
+  "description": "",
+  "keyword": "Cenário",
+  "tags": [
+    {
+      "name": "@unitários"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "que o ticket é AB167",
+  "keyword": "Dado "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.queOTicketÉAF(String,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "que o ticket especial é AB167",
+  "keyword": "Dado "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.queOTicketÉAF(String,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "que o valor da passagem é R$ 1120,23",
+  "keyword": "Dado "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.queOValorDaPassagemÉR$(Double)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "que o nome do passageiro é \"Cicrano de Oliveira\"",
+  "keyword": "Dado "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.queONomeDoPassageiroÉ(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "que o telefone do passageiro é 9888-8888",
+  "keyword": "Dado "
+});
+formatter.match({
+  "location": "AprenderCucumberSteps.queOTelefoneDoPassageiroÉ(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Deve negar todos os steps \"Dado\" dos cenários anteriores\u2028    Dado que o ticket é CD123\u2028    Dado que o ticket é AG1234\u2028    Dado que o valor da passagem é R$ 1.1345,56\u2028    Dado que o nome do passageiro é \"Beltrano Souza Matos de Alcântara Azevedo\"\u2028    Dado que o telefone do passageiro é 1234-5678\u2028    Dado que o telefone do passageiro é 999-2223",
+  "description": "",
+  "keyword": "Cenário",
+  "tags": [
+    {
+      "name": "@unitários"
+    },
+    {
+      "name": "@ignore"
+    }
+  ]
 });
 });

@@ -1,4 +1,5 @@
 #language: pt
+@funcionais
 Funcionalidade: Cadastro de contas
 
 Como um usuário 
@@ -25,20 +26,3 @@ Exemplos:
 |                | Informe o nome da conta            |
 | Conta mesmo nome| Já existe uma conta com esse nome! | 
 
-@ignore
-Cenário: Deve inserir uma conta com sucesso
-E informo a conta "Conta de Teste"
-E seleciono Salvar
-Então a conta é inserida com sucesso
-
-@ignore
-Cenário: Não deve inserir uma conta sem nome
-E informo a conta ""
-E seleciono Salvar
-Então sou notificado que o nome da conta é obrigatório
-
-@ignore
-Cenário: Não deve inserir uma conta com nome já existente
-E informo a conta "Conta mesmo nome"
-E seleciono Salvar
-Então sou notificado que já existe uma conta com esse nome
