@@ -1,4 +1,6 @@
-/Users/adecarlos.junior/eclipse-workspace/CursoCucumber/src/test/java/br/ce/adecarlos/runners/RunnerTest.java
-/Users/adecarlos.junior/eclipse-workspace/CursoCucumber/src/test/java/br/ce/adecarlos/steps/AprenderCucumberSteps.java
-/Users/adecarlos.junior/eclipse-workspace/CursoCucumber/src/test/java/br/ce/adecarlos/steps/AlugarFilmesSteps.java
-/Users/adecarlos.junior/eclipse-workspace/CursoCucumber/src/test/java/br/ce/adecarlos/converters/DateConverter.java
+/Users/adecarlos.junior/Documents/GitHub/CursoCucumber/src/test/java/br/ce/adecarlos/steps/CadastroDeContasSteps.java
+/Users/adecarlos.junior/Documents/GitHub/CursoCucumber/src/test/java/br/ce/adecarlos/steps/AlugarFilmesSteps.java
+/Users/adecarlos.junior/Documents/GitHub/CursoCucumber/src/test/java/br/ce/adecarlos/steps/AprenderCucumberSteps.java
+/Users/adecarlos.junior/Documents/GitHub/CursoCucumber/src/test/java/br/ce/adecarlos/runners/RunnerFuncionalTest.java
+/Users/adecarlos.junior/Documents/GitHub/CursoCucumber/src/test/java/br/ce/adecarlos/runners/RunnerTest.java
+/Users/adecarlos.junior/Documents/GitHub/CursoCucumber/src/test/java/br/ce/adecarlos/config/RegistryCucumber.java

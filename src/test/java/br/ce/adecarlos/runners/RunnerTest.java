@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 		features = "src/test/resources/Features/",
 		plugin = {"pretty", "html:target/report-html", "json:target/report.json"}, 
 		tags = {"@unitários"},
-		monochrome = true ,
+		monochrome = false ,
 		snippets = SnippetType.CAMELCASE,
 		dryRun = false,
 		strict = false
