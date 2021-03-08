@@ -17,16 +17,17 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 		features = "src/test/resources/Features/",
 		plugin = {"pretty", "html:target/report-html", "json:target/report.json"}, 
 		tags = {"@funcionais"},
-		monochrome = false ,
+		monochrome = true ,
 		snippets = SnippetType.CAMELCASE,
 		dryRun = false,
 		strict = false
 		)
+
 public class RunnerFuncionalTest {
 	
 	@BeforeClass
 	public static void reset() {
-		System.setProperty("webdriver.chrome.driver", "/Users/adecarlos.junior/Documents/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:\\webdrivers\\chromedriver\\88\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://srbarriga.herokuapp.com/");
 		driver.findElement(By.id("email")).sendKeys("abc@abc");

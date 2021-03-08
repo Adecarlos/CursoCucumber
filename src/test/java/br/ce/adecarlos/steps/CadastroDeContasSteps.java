@@ -11,6 +11,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.google.common.io.Files;
+
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -26,7 +28,7 @@ public class CadastroDeContasSteps {
 
 	@Dado("^que estou acessando a aplicação$")
 	public void queEstouAcessandoAAplicação() throws Throwable {
-		System.setProperty("webdriver.chrome.driver", "/Users/adecarlos.junior/Documents/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:\\webdrivers\\chromedriver\\88\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://srbarriga.herokuapp.com/");
 	}
@@ -76,6 +78,7 @@ public class CadastroDeContasSteps {
 	public void aContaÉInseridaComSucesso() throws Throwable {
 		String texto = driver.findElement(By.xpath("//div[@class='alert alert-success']")).getText();
 	    Assert.assertEquals("Conta adicionada com sucesso!", texto);
+	    
 	}
 	
 	@Então("^sou notificado que o nome da conta é obrigatório$")
@@ -103,10 +106,14 @@ public class CadastroDeContasSteps {
 	}
 	
 	@After(order = 1, value = "@funcionais")
-	public void screenshot(Scenario cenario) {
-		File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	public void screenshot(Scenario scenario) {
+		TakesScreenshot camera = (TakesScreenshot) driver;
+		File capturaDeTela = camera.getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(file, new File("target/Screenshots/"+cenario.getId()+".jpg"));
+			String scenarioId = scenario.getId().substring(scenario.getId().lastIndexOf(".feature:") + 9);
+			String nomeArquivo = "target/screenshots/" + scenario.getName() + "_" + scenarioId + "_" + scenario.getStatus() + ".png";
+			System.out.println(nomeArquivo);
+			Files.move(capturaDeTela, new File(nomeArquivo));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
